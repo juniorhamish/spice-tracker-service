@@ -11,5 +11,3 @@ app.listen(port, () => {
 });
 
 app.use('/api/spices', spiceRouter);
-
-export default app;
