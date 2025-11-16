@@ -4,7 +4,7 @@
     "outDir": "./dist/api",
     "rootDir": "./",
     "allowImportingTsExtensions": true,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
   },
   "include": ["**/*.ts"]
 }
