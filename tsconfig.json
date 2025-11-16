@@ -1,9 +1,6 @@
 {
   "extends": "@tsconfig/node24/tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist/api",
-    "rootDir": "./",
-    "allowImportingTsExtensions": true
   },
-  "include": ["**/*.ts"]
+  "exclude": ["node_modules"]
 }
