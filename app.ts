@@ -1,6 +1,6 @@
 import cors from 'cors';
 import express from 'express';
-import spiceRouter from './routes/spices.ts';
+import spiceRouter from './api/routes/spices.js';
 
 const app = express();
 
