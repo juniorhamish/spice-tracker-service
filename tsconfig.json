@@ -3,7 +3,8 @@
   "compilerOptions": {
     "outDir": "./dist/api",
     "rootDir": "./",
-    "allowImportingTsExtensions": true
+    "allowImportingTsExtensions": true,
+    "esModuleInterop": false,
   },
   "include": ["**/*.ts"]
 }
