@@ -1,6 +1,9 @@
+import env from 'dotenv';
 import express from 'express';
 import createApp, { generalErrorHandler, notFoundHandler } from 'express-shared-lib';
 import spiceRouter from './routes/spices.js';
+
+env.config();
 
 const app = express();
 const api = createApp({
