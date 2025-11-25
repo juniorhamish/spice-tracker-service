@@ -8,7 +8,8 @@
     "start": "tsx src/index.ts",
     "dev": "tsx --watch src/index.ts",
     "check": "biome check",
-    "format": "biome check --write --unsafe"
+    "format": "biome check --write --unsafe",
+    "test": "vitest run --coverage"
   },
   "dependencies": {
     "express": "~5.1.0",
@@ -19,7 +20,11 @@
     "@tsconfig/node24": "^24.0.2",
     "@types/express": "^5.0.5",
     "@types/node": "^24.10.1",
+    "@types/supertest": "^6.0.3",
+    "@vitest/coverage-v8": "^4.0.14",
+    "supertest": "^7.1.4",
     "tsx": "^4.20.6",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.14"
   }
 }

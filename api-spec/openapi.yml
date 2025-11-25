@@ -24,6 +24,12 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Spice'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
       security:
         - auth0_auth: [openid, profile, offline_access]
 components:
@@ -36,6 +42,16 @@ components:
           format: int64
         name:
           type: string
+    Error:
+      type: object
+      properties:
+        code:
+          type: number
+        message:
+          type: string
+      required:
+        - code
+        - message
   securitySchemes:
     auth0_auth:
       type: oauth2
