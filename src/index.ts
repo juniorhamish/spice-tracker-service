@@ -1,14 +1,12 @@
-import express from 'express';
+import createApp, { generalErrorHandler, notFoundHandler } from 'express-shared-lib';
 import spiceRouter from './routes/spices.js';
 
-const app = express();
-
-app.use(express.json());
-app.use('/api/spices', spiceRouter);
-
-const port = process.env.PORT ?? '3000';
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
+const app = createApp({
+  jwtAudience: 'https://spice-tracker-service.dajohnston.co.uk',
+  includeSpec: true,
 });
+
+app.use('/api/spices', spiceRouter);
+app.use(generalErrorHandler, notFoundHandler);
 
 export default app;

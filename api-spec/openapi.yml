@@ -1,0 +1,48 @@
+openapi: 3.1.1
+info:
+  title: Spice Tracker Service
+  version: 0.0.1
+servers:
+  - url: https://spice-tracker-service.dajohnston.co.uk/api
+  - url: http://localhost:3000/api
+tags:
+  - name: spice-tracker
+    description: Operations about spice-tracker
+paths:
+  /spices:
+    get:
+      tags:
+        - spice-tracker
+      description: Get list of all spices.
+      operationId: getSpices
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Spice'
+      security:
+        - auth0_auth: [openid, profile, offline_access]
+components:
+  schemas:
+    Spice:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+  securitySchemes:
+    auth0_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://dajohnston.eu.auth0.com/authorize?audience=https://spice-tracker-service.dajohnston.co.uk
+          scopes:
+            'openid': openid
+            'profile': profile
+            'offline_access': offline access
