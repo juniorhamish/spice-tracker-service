@@ -2,8 +2,6 @@
 
 A simple app to track your spices.
 
-
-
 To use the Swagger UI visit: https://generator.swagger.io/
  - API path: https://spice-tracker-service.dajohnston.co.uk/spec/openapi.yml
  - Client ID: 4wH3zd08NpcwAbVdDXHimUodN23h1bUo
